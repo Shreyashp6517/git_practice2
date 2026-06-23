@@ -1,4 +1,6 @@
-// Auth API (MAIN)
+// Auth API (FEATURE)
 function authenticate(token) {
-  return token === 'valid';
+  // NEW: Add expiration check
+  if (!token.expire) return false;
+  return token.valid === true;
 }
